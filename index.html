@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f6f6">
+    <meta name="description" content="CQUPT-B306 学习指南、贡献手册、工具说明与年度学习资料。">
+    <script>
+      try {
+        const stored = localStorage.getItem('b306-theme') || 'system';
+        const choice = ['system', 'light', 'dark'].includes(stored) ? stored : 'system';
+        const dark = choice === 'dark' || (choice === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#1c2222' : '#f3f6f6';
+      } catch {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
+    <title>CQUPT-B306</title>
+    <link rel="icon" href="b306logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="learning-paths.js" defer></script>
+    <script src="site-pages.js" defer></script>
+    <script src="topic-pages.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到正文</a>
+    <header class="topbar">
+      <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="sidebar"><span class="menu-glyph" aria-hidden="true"></span></button>
+      <a class="brand" href="#/" aria-label="CQUPT-B306 首页"><img src="b306logo.jpg" alt="" width="40" height="40"><span><strong>CQUPT-B306</strong><small>重庆邮电大学</small></span></a>
+      <nav class="top-nav" aria-label="网站导航"><a href="#/" data-section="home">首页</a><a href="#/docs" data-section="docs">学习文档</a><a href="#/recruit" data-section="recruit">招新与资料</a><a href="#/tools" data-section="tools">工具手册</a><a href="#/about" data-section="about">关于 B306</a></nav>
+      <label class="search-box"><span class="search-icon" aria-hidden="true"></span><input id="search" type="search" placeholder="搜索文档…" autocomplete="off" aria-label="搜索文档"><kbd>/</kbd></label>
+      <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="切换到深色主题" title="切换到深色主题" aria-pressed="false"><span id="theme-icon" aria-hidden="true">☼</span></button>
+      <a class="github-link" href="https://github.com/orgs/CQUPTB306/repositories" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+    <div class="layout">
+      <div class="scrim" id="scrim"></div>
+      <aside class="sidebar" id="sidebar" aria-label="栏目导航"><nav id="navigation" aria-label="页面目录"></nav><div class="sidebar-bottom"><a href="#/contribute">参与文档维护 <span aria-hidden="true">↗</span></a><a href="https://github.com/orgs/CQUPTB306/repositories" target="_blank" rel="noreferrer">GitHub ↗</a></div></aside>
+      <main id="content" tabindex="-1"><div class="loading-state">正在载入文档…</div></main>
+    </div>
+    <footer class="site-footer"><a href="#/">CQUPT-B306</a><span>学习资料与成员记录</span><a href="#/contribute">参与维护 ↗</a></footer>
+    <img class="home-watermark" src="assets/cqupt-seal.png" alt="" aria-hidden="true">
+    <noscript><p class="noscript-note">本站需要 JavaScript 来显示文档和导航，请启用后刷新页面。</p></noscript>
+  </body>
+</html>

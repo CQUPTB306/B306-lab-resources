@@ -1,0 +1,13 @@
+# 原始资料仅保留在本地，不进入 Git 历史或网站发布包。
+/docs/
+/dcos/
+
+# 本地配置、凭据与生成文件。
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+node_modules/
+_site/
+.DS_Store

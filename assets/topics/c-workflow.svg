@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="470" viewBox="0 0 720 470" role="img" aria-labelledby="title desc">
+<title id="title">从源文件到验证记录</title><desc id="desc">依次保存源码、编译与链接、运行、比较预期。编译失败先修正诊断，结果不符回到源码检查，验证后记录条件与结果。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#087579"/></marker></defs>
+<rect width="720" height="470" rx="12" fill="#f3f6f6"/>
+<g font-family="sans-serif" text-anchor="middle" font-size="23" fill="#304c4b">
+<g fill="#fff" stroke="#b8cecc" stroke-width="2"><rect x="170" y="24" width="380" height="65" rx="7"/><rect x="170" y="122" width="380" height="65" rx="7"/><rect x="170" y="220" width="380" height="65" rx="7"/><rect x="170" y="318" width="380" height="65" rx="7"/></g>
+<text x="360" y="65">1 保存源码 · practice.c</text><text x="360" y="163">2 编译与链接 · 检查诊断</text><text x="360" y="261">3 运行本次生成的程序</text><text x="360" y="359">4 对照预期 · 验证结果</text>
+<text x="360" y="436" font-size="21">记录：环境、代码、输入、输出与解释</text>
+</g>
+<g fill="none" stroke="#087579" stroke-width="3" marker-end="url(#arrow)"><path d="M360 89v29"/><path d="M360 187v29"/><path d="M360 285v29"/><path d="M360 383v24"/><path d="M170 350H65V57h100"/></g>
+<g fill="#526b68" font-family="sans-serif" font-size="19" text-anchor="middle"><text x="100" y="204">定位</text><text x="100" y="232">修正</text><text x="624" y="148">编译失败</text><text x="624" y="177">先处理诊断</text></g>
+</svg>
