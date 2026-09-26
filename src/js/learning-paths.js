@@ -1,6 +1,6 @@
 // 学习路径同时用于文档目录、栏目导航和同主题前后页，避免三个入口各自排序。
 const learningPaths = [
-  { id: 'learning', title: '学习方法', intro: '先确定阶段目标，再练习独立验证和清楚提问。', items: [['undergraduate-plan', '本科生学习规划'], ['ai-learning', 'AI 时代怎么学习'], ['ask', '科学提问指南']] },
+  { id: 'learning', title: '学习方法', intro: '先确定阶段目标，再练习独立验证和清楚提问。', items: [['undergraduate-plan', '本科生学习规划'], ['ai-learning', 'AI 时代怎么学习'], ['ai-humanities', '带文科同学认识 AI 与 Agent'], ['ask', '科学提问指南']] },
   { id: 'practice', title: '开发与协作', intro: '从本地文件和版本管理开始，完成一次贡献，再把实践整理成可复用的作品。', items: [['basics', '开发工具基础'], ['contribute', 'GitHub 与贡献入门'], ['growth', '整理自己的项目']] },
   { id: 'c-language', title: 'C 语言实践', intro: '新手先准备编译环境；阅读原始资料时，先看阶段规划和打卡说明，再做两轮练习。讲次编号保留原有链接与编排，不代表执行顺序。', items: [['c-start', 'C 语言学习起步'], ['c-roadmap', '第 01 讲 · 阶段规划'], ['c-checkin', '第 04 讲 · 打卡说明'], ['c-round1', '第 02 讲 · C 语言基础'], ['c-round2', '第 03 讲 · 数组与函数']] },
   { id: 'engineering', title: '嵌入式与智能系统', intro: '先建立系统视角，再理解 MCU 和反馈控制；具身智能与 AI 基础设施是两条可按兴趣选择的进阶方向。竞赛页帮助你将方向与实践任务对应。', items: [['embedded-history', '嵌入式的来龙去脉'], ['mcu-architecture', 'MCU 体系结构'], ['motion-control', '传统运动控制'], ['embodied-intelligence', '具身智能'], ['ai-infra', '从嵌入式到 AI 基础设施'], ['competitions', '学科竞赛与方向入门']] },
@@ -12,6 +12,7 @@ const learningPaths = [
 const readingGuides = {
   'undergraduate-plan': { before: '适合正在安排学期目标的本科生，无需开发经验。', goal: '把长期方向拆成下一阶段能检查的小目标。', task: '写下本学期两个重点、每周可用时间和一次复盘日期；为每个重点写一个完成条件。', related: ['cqupt-survival', 'growth'] },
   'ai-learning': { before: '选一个正在学习的概念或练习，带着自己的初步尝试阅读。', goal: '分清得到答案、理解答案和独立验证的区别。', task: '选一条 AI 建议，写出验证依据；换一个输入或条件，再独立解释结果。', related: ['tools', 'ask'] },
+  'ai-humanities': { before: '准备两篇公开且允许使用的短材料；不需要编程基础。', goal: '区分模型回答、Agent 工具行动与运行环境，并用原文证据核对输出。', task: '先用聊天助手做一次材料比较；若已具备 pi 环境，再用同一问题比较它的文件读取与工具记录。核对三项引文，标出一处遗漏或不确定之处。', related: ['ai-learning', 'tools', 'pi', 'ask'] },
   ask: { before: '准备问题发生时的输入、完整报错或观察记录。', goal: '把现象、猜测和请求分开，让他人能够参与排查。', task: '用问题模板写一份草稿，尝试只按草稿复现一次；解决后补上原因和验证结果。', related: ['contribute', 'ai-learning'] },
   basics: { before: '准备一个可自行创建文件的练习目录。', goal: '理解从编辑文件、运行命令到保存本地版本的关系。', task: '创建一份笔记，完成两次 Git 提交，用差异和日志说明两次版本改了什么。', related: ['c-start', 'ask'] },
   contribute: { before: '先熟悉文件、分支与本地提交；网页修订可以先跳过命令行。', goal: '按本站实际文件结构完成一次可审查的修改。', task: '修正一处已确认的问题，在 PR 中写清页面链接、来源、检查结果和未验证事项。', related: ['basics', 'ask'] },
