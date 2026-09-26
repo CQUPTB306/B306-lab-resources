@@ -1,36 +1,18 @@
 # CQUPT-B306 学习与协作站
 
-CQUPT-B306 是一份面向实验室成员与新成员的中文文档站。它把学习指南、科学提问、GitHub 协作、开发工具、C 语言阶段资料、嵌入式与智能系统专题整理成可直接阅读、可分享链接的网页；也为年度招新、项目展示和活动记录留出独立栏目。
+CQUPT-B306 是面向实验室成员与新成员的中文文档站，汇集学习指南、科学提问、GitHub 协作、开发工具、C 语言阶段资料，以及嵌入式与智能系统专题。内容以网页形式持续整理，支持直接阅读和链接分享，并为年度招新、项目展示与活动记录保留独立栏目。
 
-网站使用原生 HTML、CSS 和 JavaScript，没有 npm 依赖或打包步骤。页面以 hash 路由运行，可部署在 GitHub Pages 等静态托管服务。内容按主题拆分，旧年度资料保留独立页面；`docs/` 与 `dcos/` 中的本地原始文件默认忽略，不进入 Git 历史或公开发布包。
+网站使用原生 HTML、CSS 和 JavaScript，无需安装 npm 依赖或执行打包步骤。页面采用 hash 路由，可部署到 GitHub Pages 等静态托管服务。内容按主题拆分，历年资料各自归档；`docs/` 与 `dcos/` 中的本地原始文件默认忽略，不进入 Git 历史或公开发布包。
 
-源码仓库：<https://github.com/CQUPTB306/B306-lab-resources>
+**在线阅读：** [CQUPT-B306 学习与协作站](https://cquptb306.github.io/B306-lab-resources/) · **源码仓库：** [CQUPTB306/B306-lab-resources](https://github.com/CQUPTB306/B306-lab-resources)
 
-## 架构
+| 学习指南 | 招新与资料 | 工具手册 | GitHub 贡献 |
+| --- | --- | --- | --- |
+| [学习文档](https://cquptb306.github.io/B306-lab-resources/#/) | [年度招新与学习资料](https://cquptb306.github.io/B306-lab-resources/#/recruit) | [网络与 AI 工具](https://cquptb306.github.io/B306-lab-resources/#/tools) | [参与贡献](https://cquptb306.github.io/B306-lab-resources/#/contribute) |
 
-```mermaid
-flowchart TB
-  subgraph Browser[浏览器运行时]
-    HTML[index.html] --> CSS[src/css/styles.css]
-    HTML --> Paths[src/js/learning-paths.js]
-    HTML --> Site[src/js/site-pages.js]
-    HTML --> Topics[src/js/topic-pages.js]
-    HTML --> App[src/js/app.js]
-    Paths --> App
-    Site --> App
-    Topics --> App
-    App --> UI[Hash 路由、导航、搜索、主题与页面渲染]
-    UI --> Assets[assets/ 图片与图示]
-  end
-
-  subgraph Release[GitHub Pages 发布]
-    Push[推送 main 或手动运行] --> Actions[.github/workflows/pages.yml]
-    Actions --> Checks[JavaScript 语法检查]
-    Checks --> Build[scripts/build_site.py]
-    Build --> Artifact[_site/ 公开静态文件]
-    Artifact --> Pages[GitHub Pages]
-  end
-```
+<p align="center">
+  <img src="assets/web306.png" alt="CQUPT-B306 学习与协作站首页预览" width="960">
+</p>
 
 ## 项目结构
 
@@ -46,6 +28,7 @@ flowchart TB
 │       ├── site-pages.js      # 首页、关于、项目、日常等页面
 │       └── topic-pages.js     # 技术专题与校园指南
 ├── assets/
+│   ├── web306.png             # 网站首页预览
 │   ├── brand/                 # 品牌标志
 │   ├── projects/              # 项目栏目图示
 │   └── topics/                # 专题图示及移动版图示
@@ -101,18 +84,6 @@ python3 -m http.server 8000 --directory /tmp/b306-pages-preview
 3. 章节标题的 `id` 与 `toc` 项保持一致。站内链接采用 `#/页面ID/章节ID`；修改旧章节名时，在 `src/js/app.js` 的 `chapterAliases` 保留兼容链接。
 4. 图示放在 `assets/topics/` 或 `assets/projects/`，检查桌面和手机可读性、替代文本及来源说明。
 5. 新增年度内容使用独立页面和来源记录，不覆盖往年页面；资料不全或规则冲突时标为待确认，不推断缺失信息。
-
-## 原始资料与发布边界
-
-`docs/` 与 `dcos/` 用于维护者本地原件，已加入 `.gitignore`。网页只转述经整理的核心内容，并标出来源文件名；原始文件不上传到仓库，也不进入 `_site/`。资料年份依据原件明确日期标注，归档不表示活动已执行或当前正在招募。若网页内容与来源有差异，应说明修订缘由；缺失内容标为待确认。
-
-原件含个人联系方式，网页不转录邮箱、不提供原件下载链接。公开内容不得包含密码、令牌、个人隐私或未经许可的内部资料。首页照片来自 [Annie Spratt / Unsplash](https://unsplash.com/@anniespratt)，仅作配图，不代表 B306 成员或实景，页面已标明。其他外部资料应保留来源与许可信息。
-
-## GitHub Pages
-
-推送 `main` 会触发 `.github/workflows/pages.yml`：先检查 JavaScript 语法，再调用 `scripts/build_site.py` 组装公开发布包并部署。首次发布需由有权限的账号在仓库 **Settings → Pages → Build and deployment** 选择 **GitHub Actions**。部署状态与最终网址可在仓库 Actions 和 Pages 设置中查看。
-
-当前网站地址：<https://cquptb306.github.io/B306-lab-resources/>
 
 ## 贡献
 
