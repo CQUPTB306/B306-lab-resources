@@ -4,6 +4,7 @@ const learningPaths = [
   { id: 'practice', title: '开发与协作', intro: '从本地文件和版本管理开始，完成一次贡献，再把实践整理成可复用的作品。', items: [['basics', '开发工具基础'], ['contribute', 'GitHub 与贡献入门'], ['growth', '整理自己的项目']] },
   { id: 'c-language', title: 'C 语言实践', intro: '新手先准备编译环境；阅读原始资料时，先看阶段规划和打卡说明，再做两轮练习。讲次编号保留原有链接与编排，不代表执行顺序。', items: [['c-start', 'C 语言学习起步'], ['c-roadmap', '第 01 讲 · 阶段规划'], ['c-checkin', '第 04 讲 · 打卡说明'], ['c-round1', '第 02 讲 · C 语言基础'], ['c-round2', '第 03 讲 · 数组与函数']] },
   { id: 'engineering', title: '嵌入式与智能系统', intro: '先建立系统视角，再理解 MCU 和反馈控制；具身智能与 AI 基础设施是两条可按兴趣选择的进阶方向。竞赛页帮助你将方向与实践任务对应。', items: [['embedded-history', '嵌入式的来龙去脉'], ['mcu-architecture', 'MCU 体系结构'], ['motion-control', '传统运动控制'], ['embodied-intelligence', '具身智能'], ['ai-infra', '从嵌入式到 AI 基础设施'], ['competitions', '学科竞赛与方向入门']] },
+  { id: 'software-ai', title: '软件工程与 AI', intro: '从需求、实现、验证到维护，理解生成式工具怎样参与软件开发，以及哪些判断必须由人负责。', items: [['generative-se', '生成式软件工程']] },
   { id: 'tools', title: '网络与 AI 工具', intro: '先理解网络访问、信息核验与 Agent 工作方式，再按使用场景选择工具。', items: [['tools', '网络与工具'], ['codex', 'Codex'], ['pi', 'pi 编码代理']] },
   { id: 'campus', title: '校园生活', intro: '从正式信息入口核对学业与生活事务，结合个人负荷安排课外实践。', items: [['cqupt-survival', '重庆邮电大学生存手册']] }
 ];
@@ -27,6 +28,7 @@ const readingGuides = {
   'motion-control': { before: '先了解 MCU 定时采样；公式部分需要函数、变化率和积分的基本概念。', goal: '分清控制目标、反馈、执行器限制与实际测试条件。', task: '在仿真中一次改变一个条件，比较误差、超调与饱和；保留模型、参数和采样周期。', related: ['mcu-architecture', 'embodied-intelligence'] },
   'embodied-intelligence': { before: '先理解反馈控制；策略与训练部分可在具备机器学习基础后重读。', goal: '区分感知、状态估计、策略、控制和物理反馈的职责。', task: '为一个仿真任务列出观测、动作、成功标准和失败条件，并记录一次延迟变化的影响。', related: ['motion-control', 'ai-infra'] },
   'ai-infra': { before: '先了解嵌入式系统；动手对比服务需要基本 Linux 与网络知识。', goal: '沿数据路径比较设备、边缘和云的延迟、资源与维护代价。', task: '为一个推理任务记录输入规模、硬件、模型版本、延迟和内存，再说明断网时如何处理。', related: ['embedded-history', 'tools'] },
+  'generative-se': { before: '能读懂一个小项目的 README，并会查看 Git 差异；可先读开发工具基础。', goal: '把 AI 生成的修改放进需求、验证、审查与维护的完整工程流程。', task: '为一个公开练习仓库的小问题写出验收条件和反例，请 Agent 先分析；检查最终差异、测试记录与仍未验证的条件。', related: ['basics', 'contribute', 'ai-humanities', 'tools'] },
   competitions: { before: '先了解自己的基础和可用时间，无需先选定赛事。', goal: '按任务形态比较方向，区分能力热身与正式参赛要求。', task: '选一个方向，列出所需基础、一个热身项目，以及需要从当届通知核对的事项。', related: ['projects', 'undergraduate-plan'] },
   tools: { before: '先明确当前任务是查资料、配置开发环境，还是让 Agent 协助修改。', goal: '选对信息来源与工具，知道结果应如何验证。', task: '记录一次资料访问或工具试用的来源、环境与验证结果；遇到问题按层次缩小范围。', related: ['ai-learning', 'basics'] },
   codex: { before: '具备基础 Git 操作，准备一个可回退、不含敏感资料的项目。', goal: '按实际入口配置任务范围、检查修改并独立验证。', task: '完成一个小修改，逐项核对 diff、测试输出和任务验收条件。', related: ['tools', 'contribute'] },
